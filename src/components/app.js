@@ -1,48 +1,27 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
+import * as actions from '../actions/locations';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
-import PostItem from './post_item';
 
-class App extends Component {
-  state = { post: '' };
+class MapMainApp extends Component {
+  state = { locations: '' };
 
-  componentWillMount() {
-    this.props.fetchPosts();
+  componentDidMount() {
+    this.props.fetchLocations();
   }
 
-  handleInputChange(event) {
-    this.setState({ post: event.target.value });
-  }
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-
-    this.props.createPost(this.state.post)
-  }
-
-  renderPosts() {
-    return _.map(this.props.posts, (post, key) => {
-      return <PostItem key={key} post={post} id={key} />
+  renderLocations() {
+    return _.map(this.props.locations, (location, key) => {
+      return <LocationsItem key={key} post={location} id={key} />
     });
   }
 
   render() {
     return (
       <div>
-        <h4>Create a Post</h4>
-        <form onSubmit={this.handleFormSubmit.bind(this)} className="form-inline">
-          <div className="form-group">
-            <input
-              className="form-control"
-              placeholder="Add a post"
-              value={this.state.post}
-              onChange={this.handleInputChange.bind(this)} />
-            <button action="submit" className="btn btn-primary">Create Post</button>
-          </div>
-        </form>
+        <h4>Load Locations</h4>
         <ul className="list-group">
-          {this.renderPosts()}
+          {this.renderLocations()}
         </ul>
       </div>
     );
@@ -50,7 +29,7 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  return { posts: state.posts };
+  return { locations: state.locations };
 }
 
-export default connect(mapStateToProps, actions)(App)
+export default connect(mapStateToProps, actions)(MapMainApp)
