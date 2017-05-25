@@ -6,7 +6,7 @@ class LocationItem extends Component {
   render() {
     return (
       <li className="list-group-item">
-        {this.props.location}
+        {this.props.location.name}
       </li>
     );
   }

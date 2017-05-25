@@ -38,6 +38,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "babel-preset-stage-0": "^6.24.1",
+    "express": "^4.15.3",
     "google-map-react": "^0.24.0",
     "lodash": "^4.17.4",
     "react": "^15.5.4",

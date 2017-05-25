@@ -2,17 +2,17 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 import * as actions from '../actions/locations';
 import { connect } from 'react-redux';
+import LocationsItem from './location_item';
 
-class MapMainApp extends Component {
-  state = { locations: '' };
-
+class App extends Component {
   componentDidMount() {
     this.props.fetchLocations();
   }
 
   renderLocations() {
+    console.log(this.props.locations);
     return _.map(this.props.locations, (location, key) => {
-      return <LocationsItem key={key} post={location} id={key} />
+      return <LocationsItem key={key} location={location} id={key} />
     });
   }
 
@@ -32,4 +32,4 @@ function mapStateToProps(state) {
   return { locations: state.locations };
 }
 
-export default connect(mapStateToProps, actions)(MapMainApp)
+export default connect(mapStateToProps, actions)(App)
