@@ -15,6 +15,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
     <div style={{width: '100%', height: '400px'}}>
       <GoogleMap />
+      <App />
     </div>
   </Provider>
   , document.querySelector('.container')
