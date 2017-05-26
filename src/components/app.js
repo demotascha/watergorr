@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   renderLocations() {
-    console.log(this.props.locations);
+    // console.log(this.props.locations);
     return _.map(this.props.locations, (location, key) => {
       return <LocationsItem key={key} location={location} id={key} />
     });
