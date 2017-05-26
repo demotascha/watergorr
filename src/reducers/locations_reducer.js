@@ -7,7 +7,7 @@ import defaultLocations from './default_locations';
 export default function(state = {}, action) {
   switch (action.type) {
     case FETCH_LOCATIONS:
-      return defaultLocations;
+      return defaultLocations();
   }
 
   return state;
