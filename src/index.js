@@ -7,11 +7,11 @@ import promise from 'redux-promise';
 
 import App from './components/app';
 import reducers from './reducers';
+import SimpleMap from './components/GettingStartGMap';
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 ReactDOM.render(
-  <Provider store={createStoreWithMiddleware(reducers)}>
-  <App />
-  </Provider>
-  , document.querySelector('.container'));
+  <SimpleMap />
+  , document.querySelector('.container')
+);
