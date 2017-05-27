@@ -19,7 +19,6 @@ class GoogleMap extends Component {
   static propTypes = {
     center: PropTypes.array, // @controllable
     zoom: PropTypes.number, // @controllable
-    greatPlaces: PropTypes.array
   };
 
   static defaultProps = {
