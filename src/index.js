@@ -13,9 +13,8 @@ const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <div style={{width: '100%', height: '400px'}}>
+    <div style={{width: '800px', height: '600px', margin: '20px'}}>
       <GoogleMap />
-      <App />
     </div>
   </Provider>
   , document.querySelector('.container')
